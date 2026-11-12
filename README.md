@@ -1,5 +1,7 @@
 # 大皖提词器 · Dawan Teleprompter
 
+> **声明：本项目完全由 AI 构建，使用 Trae（trae宝）完成开发。**
+
 > 听你读到哪里，就把画面推到哪里。语音识别、文本对齐、滚动与存储全部在本机完成。
 
 [![Version](https://img.shields.io/badge/version-0.28.3-orange)](docs/releases/0.28.3.md)
