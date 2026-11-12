@@ -1,0 +1,5 @@
+# 许可扫描忽略清单
+# 仅允许登记「不会进入 Android/macOS/Windows 构建」的 Linux 专用依赖；
+# 每行格式：包名  # 原因。新增条目必须说明来源链与不随包分发的依据。
+
+dbus  # 仅由 wakelock_plus / file_picker_linux 等 Linux 实现传递引入，不进入目标平台构建（MPL-2.0，未分发）

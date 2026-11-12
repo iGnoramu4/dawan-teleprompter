@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">大皖提词器</string>
+    <string name="voice_service_title">大皖提词器语音跟随</string>
+    <string name="voice_service_text">正在使用麦克风跟随朗读</string>
+    <string name="voice_service_channel">语音跟随</string>
+</resources>

@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "updated": "2026-11-10",
+  "generatedBy": "tool/eval/gen_tts_set.dart",
+  "audioFormat": {
+    "sampleRate": 16000,
+    "channels": 1,
+    "encoding": "pcm_s16le"
+  },
+  "design": {
+    "reference": "docs/testing/TESTING.md §5.1（60 段）",
+    "p0": "P0 先跑 10 段合成语音，覆盖类别；真人录音按同一目录结构补齐后把 status 改为 ready",
+    "quotas": {
+      "普通话男声": 12,
+      "普通话女声": 12,
+      "方言口音": 10,
+      "中英混读": 8,
+      "含口误/重复/甩词": 8,
+      "含跳读/插话": 6,
+      "噪声/回声": 4
+    },
+    "segmentLengthSec": "60–120",
+    "licenseRule": "每段必须登记来源与授权；第三方音频不得入库，只记录路径与授权书编号"
+  },
+  "segments": [
+    {
+      "id": "p0-mix-brand-01",
+      "category": "mix_brand",
+      "status": "ready",
+      "script": "scripts/p0/p0-mix-brand-01.json",
+      "label": "labels/p0-mix-brand-01.json",
+      "audio": "audio/p0-mix-brand-01.wav",
+      "durationSec": "19.4",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-mix-term-01",
+      "category": "mix_term",
+      "status": "ready",
+      "script": "scripts/p0/p0-mix-term-01.json",
+      "label": "labels/p0-mix-term-01.json",
+      "audio": "audio/p0-mix-term-01.wav",
+      "durationSec": "27.5",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-silence-01",
+      "category": "silence",
+      "status": "ready",
+      "script": "scripts/p0/p0-silence-01.json",
+      "label": "labels/p0-silence-01.json",
+      "audio": "audio/p0-silence-01.wav",
+      "durationSec": "30.0",
+      "source": "synthetic-tts",
+      "voice": null,
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-fast-01",
+      "category": "zh_fast",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-fast-01.json",
+      "label": "labels/p0-zh-fast-01.json",
+      "audio": "audio/p0-zh-fast-01.wav",
+      "durationSec": "27.8",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-narr-01",
+      "category": "zh_narrative",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-narr-01.json",
+      "label": "labels/p0-zh-narr-01.json",
+      "audio": "audio/p0-zh-narr-01.wav",
+      "durationSec": "24.2",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-number-01",
+      "category": "zh_number",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-number-01.json",
+      "label": "labels/p0-zh-number-01.json",
+      "audio": "audio/p0-zh-number-01.wav",
+      "durationSec": "25.5",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-oral-01",
+      "category": "zh_oral_filler",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-oral-01.json",
+      "label": "labels/p0-zh-oral-01.json",
+      "audio": "audio/p0-zh-oral-01.wav",
+      "durationSec": "29.0",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-pause-01",
+      "category": "zh_long_pause",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-pause-01.json",
+      "label": "labels/p0-zh-pause-01.json",
+      "audio": "audio/p0-zh-pause-01.wav",
+      "durationSec": "23.4",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-repeat-01",
+      "category": "zh_repeat_repair",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-repeat-01.json",
+      "label": "labels/p0-zh-repeat-01.json",
+      "audio": "audio/p0-zh-repeat-01.wav",
+      "durationSec": "25.9",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    },
+    {
+      "id": "p0-zh-skip-01",
+      "category": "zh_skip",
+      "status": "ready",
+      "script": "scripts/p0/p0-zh-skip-01.json",
+      "label": "labels/p0-zh-skip-01.json",
+      "audio": "audio/p0-zh-skip-01.wav",
+      "durationSec": "13.8",
+      "source": "synthetic-tts",
+      "voice": "Tingting",
+      "license": "self-generated (macOS say), no third-party audio",
+      "note": "synthetic-tts：只用于版本间相对比较，不代表真人分布"
+    }
+  ]
+}

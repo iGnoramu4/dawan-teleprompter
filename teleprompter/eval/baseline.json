@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-10T10:42:49.910452",
+  "environment": "host-macos",
+  "evalDir": "eval",
+  "dart": "3.13.7 (stable) (Thu Oct 22 14:28:57 2026 -0700) on \"macos_x64\"",
+  "platform": "macos",
+  "config": {
+    "asr": {
+      "modelDir": "apps/app/assets/models/zipformer-zh-14M-int8",
+      "numThreads": 1,
+      "decodingMethod": "greedy_search",
+      "enableEndpoint": true,
+      "rule1MinTrailingSilence": 2.4,
+      "rule2MinTrailingSilence": 1.2,
+      "rule3MinUtteranceLength": 20.0,
+      "modelType": "",
+      "hotwordsFile": "",
+      "hotwordsScore": 1.5,
+      "maxActivePaths": 4,
+      "blankPenalty": 0.0
+    },
+    "chunkMs": 20,
+    "modelDir": "apps/app/assets/models/zipformer-zh-14M-int8"
+  },
+  "aggregate": {
+    "segments": 10,
+    "cer": "12.0%",
+    "distance": 82,
+    "refTokens": 684,
+    "hitRate": "87.2%",
+    "hitLines": 34,
+    "spokenLines": 39,
+    "firstCharP50Ms": 460.0,
+    "firstCharP95Ms": 780.0,
+    "followP50Ms": 1320.0,
+    "followP95Ms": 5734.0,
+    "followMeanMs": 1726.4,
+    "falseTriggers": 0,
+    "falseTriggerPerMin": 0.0,
+    "rtf": 0.0256
+  },
+  "categories": {
+    "mix_brand": {
+      "segments": 1,
+      "cer": "22.4%",
+      "hitRate": "100.0%",
+      "followP95Ms": 1320.0
+    },
+    "mix_term": {
+      "segments": 1,
+      "cer": "35.1%",
+      "hitRate": "100.0%",
+      "followP95Ms": 2860.0
+    },
+    "silence": {
+      "segments": 1,
+      "cer": "0.0%",
+      "hitRate": "0.0%",
+      "followP95Ms": 0.0
+    },
+    "zh_fast": {
+      "segments": 1,
+      "cer": "7.3%",
+      "hitRate": "75.0%",
+      "followP95Ms": 6774.0
+    },
+    "zh_narrative": {
+      "segments": 1,
+      "cer": "6.3%",
+      "hitRate": "50.0%",
+      "followP95Ms": 11060.0
+    },
+    "zh_number": {
+      "segments": 1,
+      "cer": "9.5%",
+      "hitRate": "100.0%",
+      "followP95Ms": 1872.0
+    },
+    "zh_oral_filler": {
+      "segments": 1,
+      "cer": "3.3%",
+      "hitRate": "80.0%",
+      "followP95Ms": 1946.0
+    },
+    "zh_long_pause": {
+      "segments": 1,
+      "cer": "12.9%",
+      "hitRate": "100.0%",
+      "followP95Ms": 1558.0
+    },
+    "zh_repeat_repair": {
+      "segments": 1,
+      "cer": "8.5%",
+      "hitRate": "100.0%",
+      "followP95Ms": 1837.0
+    },
+    "zh_skip": {
+      "segments": 1,
+      "cer": "7.1%",
+      "hitRate": "66.7%",
+      "followP95Ms": 5734.0
+    }
+  },
+  "segments": [
+    {
+      "id": "p0-mix-brand-01",
+      "category": "mix_brand",
+      "durationMs": 19377,
+      "cer": 0.2,
+      "distance": 13,
+      "refTokens": 58,
+      "reference": "现场用的是 iPhone 和安卓双端同步。Wi-Fi 断了也没关系，本地模型可以离线跑。AI 部分我们只做辅助，不做自动改写。数据全部留在本机，不上传云端。",
+      "hypothesis": "现场用的是阿粉和安卓双儿端同步五尔法尔断了也没关系本地模型可以离线跑阿姨部分我们之作辅助不做自动改写数据全部留在本期不上船云端",
+      "firstCharLatency": {
+        "count": 4,
+        "mean": 507.8,
+        "p50": 478.0,
+        "p95": 780.0,
+        "max": 780.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 4,
+        "mean": 747.8,
+        "p50": 780.0,
+        "p95": 1320.0,
+        "max": 1320.0
+      },
+      "followMiss": 0,
+      "hitRate": 1.0,
+      "hitLines": 4,
+      "spokenLines": 4,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.027163226339147452,
+      "decodeMs": 526.4,
+      "loadMs": 482.9,
+      "utterances": [
+        "现场用的是阿粉和安卓双儿端同步五尔法尔断了也没关系本地模型可以离线跑",
+        "阿姨部分我们之作辅助不做自动改写数据全部留在本期不上船云端"
+      ]
+    },
+    {
+      "id": "p0-mix-term-01",
+      "category": "mix_term",
+      "durationMs": 27510,
+      "cer": 0.4,
+      "distance": 27,
+      "refTokens": 77,
+      "reference": "这个功能依赖 Flutter 的插件体系，底层是 sherpa-onnx。我们把音频流交给 SDK，由它返回 JSON 格式的结果。前端的 prompt 需要单独配置，不能写死在代码里。接口这边用的是 REST，鉴权走 token。联调的时候记得开 debug 日志。",
+      "hypothesis": "这个功能依赖觉得插件体系底层是声音我们把音频留交给X第一由他返回的结果前端需要单独配置不能写死在怠马里街口这边用的是瑞全走之后连吊的时候记得日",
+      "firstCharLatency": {
+        "count": 5,
+        "mean": 393.8,
+        "p50": 459.0,
+        "p95": 495.0,
+        "max": 495.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 5,
+        "mean": 1289.8,
+        "p50": 1099.0,
+        "p95": 2860.0,
+        "max": 2860.0
+      },
+      "followMiss": 0,
+      "hitRate": 1.0,
+      "hitLines": 5,
+      "spokenLines": 5,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.025562699912765222,
+      "decodeMs": 703.3,
+      "loadMs": 445.3,
+      "utterances": [
+        "这个功能依赖觉得插件体系底层是声音",
+        "我们把音频留交给X第一由他返回的结果",
+        "前端需要单独配置不能写死在怠马里街口这边用的是瑞全走之后",
+        "连吊的时候记得日"
+      ]
+    },
+    {
+      "id": "p0-silence-01",
+      "category": "silence",
+      "durationMs": 30000,
+      "cer": 0.0,
+      "distance": 0,
+      "refTokens": 0,
+      "reference": "",
+      "hypothesis": "",
+      "firstCharLatency": {
+        "count": 0,
+        "mean": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 0,
+        "mean": 0.0,
+        "p50": 0.0,
+        "p95": 0.0,
+        "max": 0.0
+      },
+      "followMiss": 0,
+      "hitRate": 1.0,
+      "hitLines": 0,
+      "spokenLines": 0,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.5,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.024730199999999977,
+      "decodeMs": 741.9,
+      "loadMs": 442.5,
+      "utterances": []
+    },
+    {
+      "id": "p0-zh-fast-01",
+      "category": "zh_fast",
+      "durationMs": 27838,
+      "cer": 0.1,
+      "distance": 8,
+      "refTokens": 109,
+      "reference": "接下来我快速过一遍这三个模块的具体实现和它们之间的调用关系。第一部分负责采集第二部分负责识别第三部分负责把结果映射到稿件位置。三部分之间通过一个轻量的消息通道连接互不阻塞。如果中间任何一环掉队整体就会明显滞后这一点要特别注意。",
+      "hypothesis": "接下来我快速过一遍这三个模块具体实现和他们之间的调用关系第一部分负责采集第二部分负责识识识别第三部分负责把结果映射到稿件位置三部分之间通过一个精量的消息通道连接户部阻塞如果中间任何一环掉队整体就会明显滞后这一点药特别注意",
+      "firstCharLatency": {
+        "count": 4,
+        "mean": 641.0,
+        "p50": 690.0,
+        "p95": 694.0,
+        "max": 694.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 4,
+        "mean": 2401.0,
+        "p50": 1330.0,
+        "p95": 6774.0,
+        "max": 6774.0
+      },
+      "followMiss": 0,
+      "hitRate": 0.8,
+      "hitLines": 3,
+      "spokenLines": 4,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.0,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.02610654118323213,
+      "decodeMs": 726.8,
+      "loadMs": 446.7,
+      "utterances": [
+        "接下来我快速过一遍这三个模块具体实现和他们之间的调用关系第一部分负责采集第二部分负责识识识别第三部分负责把结果映射到稿件位置三部分之间通过一个精量的消息通道连接户部阻塞",
+        "如果中间任何一环掉队整体就会明显滞后这一点药特别注意"
+      ]
+    },
+    {
+      "id": "p0-zh-narr-01",
+      "category": "zh_narrative",
+      "durationMs": 24220,
+      "cer": 0.1,
+      "distance": 5,
+      "refTokens": 79,
+      "reference": "各位好，今天这场分享我们主要讲三个部分。第一是产品的定位，第二是现场演示，第三是后续的排期安排。整个流程大概需要四十分钟，中间会留出提问时间。如果没有其他问题，我们现在就开始。",
+      "hypothesis": "各位好今天这场分享我们主要讲三个部分第一是产品的定位第二场演示第三式后序的排期安排整个流程大概需要四十分钟中间会流出提问时间如果没有其他问题我们现在就开始",
+      "firstCharLatency": {
+        "count": 4,
+        "mean": 525.3,
+        "p50": 537.0,
+        "p95": 604.0,
+        "max": 604.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 4,
+        "mean": 4365.3,
+        "p50": 5017.0,
+        "p95": 11060.0,
+        "max": 11060.0
+      },
+      "followMiss": 0,
+      "hitRate": 0.5,
+      "hitLines": 2,
+      "spokenLines": 4,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.02574356962966029,
+      "decodeMs": 623.5,
+      "loadMs": 443.3,
+      "utterances": [
+        "各位好今天这场分享我们主要讲三个部分第一是产品的定位第二场演示第三式后序的排期安排整个流程大概需要四十分钟中间会流出提问时间如果没有",
+        "其他问题我们现在就开始"
+      ]
+    },
+    {
+      "id": "p0-zh-number-01",
+      "category": "zh_number",
+      "durationMs": 25543,
+      "cer": 0.1,
+      "distance": 8,
+      "refTokens": 84,
+      "reference": "今年第三季度的营收是一千二百五十万元。同比增长百分之十八点六，环比增长百分之四。成本控制在三百二十万元左右，占比不到三成。预计明年一月十五号之前完成结算。具体数字以财务最终口径为准。",
+      "hypothesis": "今年第三季度的营收是一千二百五十万元同比增长百十十八点六环比增长百成本控制在三百二十万元左右占比不到三成日记名年一月十五号之前完成结算具体数字以财务最终口径为准",
+      "firstCharLatency": {
+        "count": 5,
+        "mean": 434.2,
+        "p50": 442.0,
+        "p95": 605.0,
+        "max": 605.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 5,
+        "mean": 1202.2,
+        "p50": 1402.0,
+        "p95": 1872.0,
+        "max": 1872.0
+      },
+      "followMiss": 0,
+      "hitRate": 1.0,
+      "hitLines": 5,
+      "spokenLines": 5,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.025983637360056322,
+      "decodeMs": 663.8,
+      "loadMs": 436.5,
+      "utterances": [
+        "今年第三季度的营收是一千二百五十万元",
+        "同比增长百十十八点六环比增长百",
+        "成本控制在三百二十万元左右占比不到三成",
+        "日记名年一月十五号之前完成结算具体数字以财务最终口径为准"
+      ]
+    },
+    {
+      "id": "p0-zh-oral-01",
+      "category": "zh_oral_filler",
+      "durationMs": 29017,
+      "cer": 0.0,
+      "distance": 3,
+      "refTokens": 91,
+      "reference": "呃，其实这个功能，那个，我们内部讨论了很久。就是说，一开始大家觉得没必要，后来又发现确实挺常用的。嗯，所以这次我们就把它放进了默认设置里面。那个，具体怎么用，等一下演示的时候大家就能看到。反正，呃，先用起来再说。",
+      "hypothesis": "其实这个功能那个我们内部讨论了很久就是说一开始大家觉得没必要后来又发现确实挺常用的问所以这次我们就把它放进了默认设置里面那个具体怎么用等一下演示的时候大家就能看到反正饿先用起来再说",
+      "firstCharLatency": {
+        "count": 5,
+        "mean": 529.2,
+        "p50": 422.0,
+        "p95": 1000.0,
+        "max": 1000.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 4,
+        "mean": 1356.0,
+        "p50": 1640.0,
+        "p95": 1946.0,
+        "max": 1946.0
+      },
+      "followMiss": 1,
+      "hitRate": 0.8,
+      "hitLines": 4,
+      "spokenLines": 5,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.025382012405237783,
+      "decodeMs": 736.6,
+      "loadMs": 438.4,
+      "utterances": [
+        "其实这个功能那个我们内部讨论了很久",
+        "就是说一开始大家觉得没必要后来又发现确实挺常用的",
+        "问所以这次我们就把它放进了默认设置里面那个具体怎么用等一下演示的时候大家就能看到反正饿先用起来再说"
+      ]
+    },
+    {
+      "id": "p0-zh-pause-01",
+      "category": "zh_long_pause",
+      "durationMs": 23366,
+      "cer": 0.1,
+      "distance": 8,
+      "refTokens": 62,
+      "reference": "下面这段话我会故意停顿得久一点。第一句话讲完之后，我会停下来想一想。有时候现场需要看提词器确认下一句。所以停顿两秒左右是很常见的情况。",
+      "hypothesis": "下面这段话我会故意停顿久一点第一句话讲完之后我会停下来想一想有时候现场需要看题词确确认下一举所以停顿量秒事很常见的情况",
+      "firstCharLatency": {
+        "count": 4,
+        "mean": 657.0,
+        "p50": 712.0,
+        "p95": 858.0,
+        "max": 858.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 4,
+        "mean": 1297.0,
+        "p50": 1498.0,
+        "p95": 1558.0,
+        "max": 1558.0
+      },
+      "followMiss": 0,
+      "hitRate": 1.0,
+      "hitLines": 4,
+      "spokenLines": 4,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.02467665183156446,
+      "decodeMs": 576.6,
+      "loadMs": 432.6,
+      "utterances": [
+        "下面这段话我会故意停顿久一点",
+        "第一句话讲完之后我会停下来想一想",
+        "有时候现场需要看题词确确认下一举",
+        "所以停顿量秒事很常见的情况"
+      ]
+    },
+    {
+      "id": "p0-zh-repeat-01",
+      "category": "zh_repeat_repair",
+      "durationMs": 25850,
+      "cer": 0.1,
+      "distance": 7,
+      "refTokens": 82,
+      "reference": "我们的目标是，目标是让每个人都能快速上手。这套方案，这套方案在上周已经验证过了。不对，我重新说，是在上个月完成的验证。验证的结果是，稳定性提升了百分之二十。所以接下来我们按原计划推进。",
+      "hypothesis": "我们的目标是目标是让每个人都能快速上手这套方案这套方案在上周已经验证过了部队我重新说世子上个月完成的验证验证的结果是稳定性提升了二十所以接下来我们按原计划推进",
+      "firstCharLatency": {
+        "count": 5,
+        "mean": 404.2,
+        "p50": 412.0,
+        "p95": 598.0,
+        "max": 598.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 5,
+        "mean": 916.2,
+        "p50": 598.0,
+        "p95": 1837.0,
+        "max": 1837.0
+      },
+      "followMiss": 0,
+      "hitRate": 1.0,
+      "hitLines": 5,
+      "spokenLines": 5,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.025621059146648008,
+      "decodeMs": 662.3,
+      "loadMs": 434.0,
+      "utterances": [
+        "我们的目标是目标是让每个人都能快速上手",
+        "这套方案这套方案在上周已经验证过了部队我重新说世子上个月完成的验证",
+        "验证的结果是稳定性提升了二十",
+        "所以接下来我们按原计划推进"
+      ]
+    },
+    {
+      "id": "p0-zh-skip-01",
+      "category": "zh_skip",
+      "durationMs": 13754,
+      "cer": 0.1,
+      "distance": 3,
+      "refTokens": 42,
+      "reference": "我们先讲第一点，也就是产品的定位。直接跳到第二点，现场演示的部分。演示结束以后我们再回到排期。",
+      "hypothesis": "我们先讲地一点也就是产品的定位直接跳到第二现场演示的部分演士结束以后我们再回到排期",
+      "firstCharLatency": {
+        "count": 3,
+        "mean": 497.7,
+        "p50": 460.0,
+        "p95": 614.0,
+        "max": 614.0
+      },
+      "firstCharMiss": 0,
+      "followLatency": {
+        "count": 3,
+        "mean": 2631.0,
+        "p50": 1379.0,
+        "p95": 5734.0,
+        "max": 5734.0
+      },
+      "followMiss": 0,
+      "hitRate": 0.7,
+      "hitLines": 2,
+      "spokenLines": 3,
+      "falseTriggers": 0,
+      "silenceMinutes": 0.1,
+      "falseTriggerPerMin": 0.0,
+      "maxOverAdvance": 0,
+      "rtf": 0.02464323106005522,
+      "decodeMs": 338.9,
+      "loadMs": 434.4,
+      "utterances": [
+        "我们先讲地一点也就是产品的定位直接跳到第二现场演示的部分",
+        "演士结束以后我们再回到排期"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "id": "p0-silence-01",
+  "category": "silence",
+  "voice": "Tingting",
+  "silenceOnlyMs": 30000,
+  "lines": []
+}

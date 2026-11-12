@@ -1,0 +1,13 @@
+{
+  "id": "p0-zh-pause-01",
+  "category": "zh_long_pause",
+  "voice": "Tingting",
+  "leadingSilenceMs": 600,
+  "trailingSilenceMs": 900,
+  "lines": [
+    { "text": "下面这段话我会故意停顿得久一点。", "pauseAfterMs": 2000 },
+    { "text": "第一句话讲完之后，我会停下来想一想。", "pauseAfterMs": 2400 },
+    { "text": "有时候现场需要看提词器确认下一句。", "pauseAfterMs": 1800 },
+    { "text": "所以停顿两秒左右是很常见的情况。", "pauseAfterMs": 400 }
+  ]
+}

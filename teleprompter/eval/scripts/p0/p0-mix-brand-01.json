@@ -1,0 +1,25 @@
+{
+  "id": "p0-mix-brand-01",
+  "category": "mix_brand",
+  "voice": "Tingting",
+  "leadingSilenceMs": 600,
+  "trailingSilenceMs": 900,
+  "lines": [
+    {
+      "text": "现场用的是 iPhone 和安卓双端同步。",
+      "pauseAfterMs": 750
+    },
+    {
+      "text": "Wi-Fi 断了也没关系，本地模型可以离线跑。",
+      "pauseAfterMs": 800
+    },
+    {
+      "text": "AI 部分我们只做辅助，不做自动改写。",
+      "pauseAfterMs": 750
+    },
+    {
+      "text": "数据全部留在本机，不上传云端。",
+      "pauseAfterMs": 400
+    }
+  ]
+}

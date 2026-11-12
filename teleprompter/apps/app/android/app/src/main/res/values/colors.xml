@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 启动画面底色，与应用图标深蓝底色一致。 -->
+    <color name="splash_background">#1565C0</color>
+</resources>

@@ -1,0 +1,12 @@
+name: core_reader_layout
+description: 纯 Dart 阅读页布局模型：视觉行快照、固定阅读带、一阶限速跟随与位置强调。
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dev_dependencies:
+  coverage: ^1.11.0
+  lints: ^5.1.1
+  test: ^1.25.15

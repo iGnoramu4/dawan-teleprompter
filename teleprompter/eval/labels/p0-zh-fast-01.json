@@ -1,0 +1,34 @@
+{
+  "id": "p0-zh-fast-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "接下来我快速过一遍这三个模块的具体实现和它们之间的调用关系。",
+      "startMs": 500,
+      "endMs": 7030,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "第一部分负责采集第二部分负责识别第三部分负责把结果映射到稿件位置。",
+      "startMs": 7480,
+      "endMs": 14636,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "三部分之间通过一个轻量的消息通道连接互不阻塞。",
+      "startMs": 15086,
+      "endMs": 20080,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "如果中间任何一环掉队整体就会明显滞后这一点要特别注意。",
+      "startMs": 20530,
+      "endMs": 26538,
+      "spoken": true
+    }
+  ],
+  "durationMs": 27838
+}

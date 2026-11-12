@@ -1,0 +1,17 @@
+name: asr_eval
+description: 提词器 ASR / 跟随离线评测工具（P0 基线，不参与产品构建）。
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  sherpa_onnx: 2.0.1
+  core_alignment:
+    path: ../../packages/core_alignment
+  args: ^2.5.0
+  path: ^1.9.0
+
+dev_dependencies:
+  test: ^1.25.0

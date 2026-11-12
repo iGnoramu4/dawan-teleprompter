@@ -1,0 +1,342 @@
+{
+  "version": 1,
+  "updated": "2026-11-10",
+  "models": [
+    {
+      "id": "zipformer-zh-14M-int8",
+      "assetDir": "assets/models/zipformer-zh-14M-int8",
+      "tier": "T0",
+      "source": {
+        "type": "manual",
+        "url": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-zh-14M-2023-02-23",
+        "note": "权重由 ALG 本地提供，不进入 Git"
+      },
+      "license": {
+        "framework": "Apache-2.0 (sherpa-onnx)",
+        "weights": "Apache-2.0",
+        "redistribution": "A+B approved by project owner (2026-11-06)",
+        "verifiedAt": "2026-11-10",
+        "note": "仅中文（WenetSpeech），无英文 BPE；不能单独满足中英混说需求"
+      },
+      "files": [
+        {
+          "name": "encoder-epoch-99-avg-1.int8.onnx",
+          "size": 21621684,
+          "sha256": "1c556ea57cec304e55ec4b72e52c1cc098bb01476ed7d90f3de939fe126487b1"
+        },
+        {
+          "name": "decoder-epoch-99-avg-1.int8.onnx",
+          "size": 1888682,
+          "sha256": "22f123bb8cba9b38974b3df18a3f45e7081f4985ebb2e075d9f21f618c468bbf"
+        },
+        {
+          "name": "joiner-epoch-99-avg-1.int8.onnx",
+          "size": 1795562,
+          "sha256": "a7cf9d82757bdcf786059454495a9ca95e4bd7347f72473fc08d794475c36169"
+        },
+        {
+          "name": "tokens.txt",
+          "size": 48697,
+          "sha256": "8b294db9045d6e5f94647f4c1eec1af4da143a75053c399611444b378ff966ac"
+        }
+      ]
+    },
+    {
+      "id": "zipformer-bilingual-mixed",
+      "assetDir": "assets/models/zipformer-bilingual-mixed",
+      "tier": "T1",
+      "status": "integrated",
+      "defaultSince": "0.23.0",
+      "basedOn": "zipformer-bilingual-zh-en-2023-02-20",
+      "sizeBytes": 208661419,
+      "streaming": true,
+      "source": {
+        "type": "derived",
+        "url": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20",
+        "note": "同一上游仓库：encoder 用 int8 原文件，decoder/joiner 用 fp32 原文件；全 int8 版本会系统性叠字，不可用"
+      },
+      "license": {
+        "framework": "Apache-2.0 (sherpa-onnx)",
+        "weights": "Apache-2.0",
+        "redistribution": "allowed-A (upstream model card)",
+        "verifiedAt": "2026-11-10",
+        "note": "四件套均来自上游 Apache-2.0 模型；fp32 decoder/joiner 在随包目录中去掉 .int8 后缀"
+      },
+      "files": [
+        {
+          "name": "encoder-epoch-99-avg-1.int8.onnx",
+          "size": 181895032,
+          "sha256": "8fa764187a261844f859d7143ebaa563af5d10adfece4c18a8f414c88cba2a9b"
+        },
+        {
+          "name": "decoder-epoch-99-avg-1.onnx",
+          "size": 13876452,
+          "sha256": "2e3b5ec371f8899ee6acd829fd753ba45772df57a91bdf37cde3136354e7db7d"
+        },
+        {
+          "name": "joiner-epoch-99-avg-1.onnx",
+          "size": 12833618,
+          "sha256": "5f2adc585dd1bec6421c8bb8660d2a73fc8b9ceb24491ef51399ba2a2f0fc31b"
+        },
+        {
+          "name": "tokens.txt",
+          "size": 56317,
+          "sha256": "a8e0e4ec53810e433789b54a5c0134a7eaa2ffca595a6334d54c00da858841d3"
+        }
+      ],
+      "eval": {
+        "evaluatedAt": "2026-11-10",
+        "host": {
+          "cer": "3.4%",
+          "hitRate": "94.9%",
+          "firstCharP95Ms": 712,
+          "followP50Ms": 780,
+          "followP95Ms": 3417,
+          "rtf": 0.1005,
+          "report": "build/d1d2-after-mixed.json"
+        },
+        "device": {
+          "device": "Xiaomi 24091RPADC / SM8635（骁龙 8s Gen 3）/ Android 16（非目标机型）",
+          "cer": "3.5%",
+          "hitRate": "94.9%",
+          "firstCharP50Ms": 460,
+          "firstCharP95Ms": 712,
+          "followP50Ms": 780,
+          "followP95Ms": 3417,
+          "falseTriggers": 0,
+          "rtf": 0.0675,
+          "loadMs": "1188–1467（逐段；首段 1320.4）",
+          "report": "build/device-report-android-sm8635-mixed-load.json"
+        },
+        "gate": "RTF 0.0675 < 0.3；首字 P95 712 ms ≤ 800；30 min 静音误触发 0；harness PSS 峰值 550.2 MB（同 harness 14M 387.4 MB，差 +162.8 MB）",
+        "decision": "0.23.0 起设为语音跟随默认模型；14M 保留为设置项可切回，不迁移/不清除用户数据"
+      }
+    }
+  ],
+  "candidates": [
+    {
+      "id": "zipformer-bilingual-zh-en-2023-02-20",
+      "status": "verified",
+      "verifiedAt": "2026-11-10",
+      "sizeMiB": 189,
+      "sizeMB": 198,
+      "sizeBytes": 198270793,
+      "streaming": true,
+      "hotwords": true,
+      "license": "Apache-2.0",
+      "redistribution": "allowed-A",
+      "licenseUrl": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20",
+      "evidence": "HF 模型卡 YAML front matter 标注 license: apache-2.0（2026-11-10 复核）；体积为 HF 文件树 int8 四件套合计（已查证）；2026-11-10 经 hf-mirror 下载后本地 shasum 校验，encoder/joiner/decoder 与 HF LFS oid 一致，tokens.txt 本地计算哈希；直连 huggingface.co 超时，镜像仅作传输通道",
+      "note": "中英双语、80M 级、transducer；目标模型（D1）。接入准备见 docs/design/20261110-bilingual-zipformer-plan.md",
+      "assetDir": "assets/models/zipformer-bilingual-zh-en-int8",
+      "provenance": {
+        "repo": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20",
+        "revision": "main",
+        "checkedAt": "2026-11-10",
+        "note": "只带 int8 transducer 三件套 + tokens.txt；fp32 与 bpe.model 解码不需要"
+      },
+      "files": [
+        {
+          "name": "encoder-epoch-99-avg-1.int8.onnx",
+          "size": 181895032,
+          "sha256": "8fa764187a261844f859d7143ebaa563af5d10adfece4c18a8f414c88cba2a9b",
+          "sha256Source": "huggingface lfs oid"
+        },
+        {
+          "name": "decoder-epoch-99-avg-1.int8.onnx",
+          "size": 13091040,
+          "sha256": "1a70c593d71e53f023f5f55b0b4cfff5055abb786ee3992e5f63dc2e273cc4fa",
+          "sha256Source": "local sha256; matches HF LFS oid (corrected 2026-11-10)"
+        },
+        {
+          "name": "joiner-epoch-99-avg-1.int8.onnx",
+          "size": 3228404,
+          "sha256": "1ed689c5ed19dbaa725d9d191bb4822b5f4855a39e1ffd28cbc1f340d25b2ee0",
+          "sha256Source": "huggingface lfs oid"
+        },
+        {
+          "name": "tokens.txt",
+          "size": 56317,
+          "sha256": "a8e0e4ec53810e433789b54a5c0134a7eaa2ffca595a6334d54c00da858841d3",
+          "sha256Source": "local sha256 (2026-11-10)"
+        }
+      ],
+      "eval": {
+        "status": "quantization-broken",
+        "evaluatedAt": "2026-11-10",
+        "device": "Xiaomi 24091RPADC / SM8635（骁龙 8s Gen 3）/ Android 16",
+        "hostInt8": {
+          "label": "host-macos-x64-bilingual",
+          "cer": "34.8%",
+          "cerAfterTermMerge": "34.2%",
+          "mixBrand": "29.3% → 22.8%",
+          "mixTerm": "67.5% → 67.1%",
+          "rtf": 0.1141
+        },
+        "deviceRun": {
+          "label": "android-sm8635-bilingual",
+          "cer": "34.5%",
+          "hitRate": "84.6%",
+          "firstCharP50Ms": 422,
+          "firstCharP95Ms": 712,
+          "followP95Ms": 8139,
+          "rtf": 0.0579,
+          "loadMs": 1181.4,
+          "pssMb": [366, 420],
+          "falseTriggers": 2
+        },
+        "hostFp32": {
+          "cer": "3.4%",
+          "mixBrand": "7.0%",
+          "mixTerm": "13.2%",
+          "hitRate": "89.7%",
+          "firstCharP95Ms": 712,
+          "rtf": 0.0884
+        },
+        "hostMixedInt8EncoderFp32DecoderJoiner": {
+          "cer": "3.4%",
+          "mixTerm": "13.2%",
+          "rtf": 0.0994,
+          "sizeMB": 208.6
+        },
+        "deviceMixed": {
+          "device": "Xiaomi 24091RPADC / SM8635（骁龙 8s Gen 3）/ Android 16（非目标机型）",
+          "label": "android-sm8635-bilingual-mixed",
+          "cer": "3.5%",
+          "hitRate": "89.7%",
+          "firstCharP50Ms": 460,
+          "firstCharP95Ms": 712,
+          "followP50Ms": 780,
+          "followP95Ms": 5414,
+          "falseTriggers": 0,
+          "rtf": 0.0647,
+          "loadMs": "1168–1313（逐段）",
+          "pssPeakMb": 435.5,
+          "gate": "四项全过：RTF 0.0647 < 0.3；首字 P95 712 ms ≤ 800；误触发 0 次/30 min；PSS 峰值 435.5 MB < 500 MB",
+          "longRun10m": "34 轮；前 33 轮 rtf 0.064–0.084 稳定，末轮 0.196（升温后限频）；cpuss0 峰值 78.5°C，RSS 489→282 MiB",
+          "silence30m": "数字静音（PCM 全零）0 次/30 min；-50 dBFS 粉噪代理 0 次/30 min；两轮 ASR 均无任何识别输出",
+          "note": "首轮长跑因熄屏被 MIUI 限频（rtf 0.065→0.41），开常亮后重跑，漂移数据取重跑结果；0.23.0 起以混合精度变体设为默认"
+        },
+        "isolation": "fp32 encoder + int8 decoder/joiner 仍叠字（单段 CER 22.8%）；int8 encoder + fp32 decoder/joiner 无叠字（单段 CER 1.3%，与全 fp32 相同）→ 叠字由 decoder/joiner 的 int8 量化造成，与 encoder 量化无关",
+        "baseline14m": "同机同集：CER 11.5% / 命中 94.9% / 首字P95 780ms / RTF 0.0236 / PSS 164–168MB / 误触发 0",
+        "note": "int8 全量版识别系统性叠字，不可用；权重本身正常（fp32 干净）。可行组合为 encoder int8 + decoder/joiner fp32（+10MB），真机四项门禁已全过；0.23.0 起该组合以 zipformer-bilingual-mixed 随包并设为默认，14M 保留可切回。",
+        "plan": "docs/design/20261110-bilingual-zipformer-plan.md"
+      }
+    },
+    {
+      "id": "zipformer-multi-zh-en-2025-02-10",
+      "status": "evaluated",
+      "verifiedAt": "2026-11-10",
+      "sizeBytes": 338873347,
+      "streaming": true,
+      "chunkSize": 16,
+      "license": "Apache-2.0",
+      "redistribution": "allowed-A",
+      "licenseUrl": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-ar_en_id_ja_ru_th_vi_zh-2025-02-10",
+      "evidence": "k2-fsa（csukuangfj）官方 sherpa-onnx 导出，源自 icefall 多语种 zipformer，非社区转换版；四件套 sha256 与 HF LFS oid 一致（2026-11-10 本地校验），tokens.txt 本地计算哈希",
+      "provenance": {
+        "repo": "https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-ar_en_id_ja_ru_th_vi_zh-2025-02-10",
+        "revision": "main",
+        "checkedAt": "2026-11-10",
+        "note": "仓库只有 decoder fp32（无 int8 decoder），encoder/joiner 为 int8；官方缓存位于项目根 models-eval/（本地目录，不进 Git）"
+      },
+      "files": [
+        {
+          "name": "encoder-epoch-75-avg-11-chunk-16-left-128.int8.onnx",
+          "size": 296583597,
+          "sha256": "f9001ed7a9e46d0294438c1a30cd7c72d1cc4bdd4e7880edbcda36f67081e32e",
+          "sha256Source": "huggingface lfs oid"
+        },
+        {
+          "name": "decoder-epoch-75-avg-11-chunk-16-left-128.onnx",
+          "size": 33837085,
+          "sha256": "7ebc63f34b21c8efb4a41a5a2eee7fe1448829ce0230ecc5369e67fc14d90d48",
+          "sha256Source": "huggingface lfs oid"
+        },
+        {
+          "name": "joiner-epoch-75-avg-11-chunk-16-left-128.int8.onnx",
+          "size": 8257421,
+          "sha256": "db88e3172323551abaa99b91b18fb422a27ea4a834fd0db10389f9478816f917",
+          "sha256Source": "huggingface lfs oid"
+        },
+        {
+          "name": "tokens.txt",
+          "size": 195244,
+          "sha256": "784f24950f6bcce1b0021035632dd60fd4617ecd8ca0581ab57d7b39d77ba5ab",
+          "sha256Source": "local sha256 (2026-11-10)"
+        }
+      ],
+      "eval": {
+        "host": {
+          "label": "host-macos-x64-official-multi",
+          "cer": "7.2%",
+          "hitRate": "87.2%",
+          "firstCharP50Ms": 664,
+          "firstCharP95Ms": 875,
+          "followP95Ms": 6114,
+          "falseTriggers": 0,
+          "rtf": 0.2375,
+          "mixBrand": "14.0%",
+          "mixTerm": "23.7%"
+        },
+        "englishInMixed": "mix_brand 英文命中 0/3（iphone/wifi/ai 全丢）；mix_term 1/8（只留 SDK）；纯英文测试 wav 可正常出词",
+        "decision": "中文 CER 优于 14M（7.2% vs 12.0%），但句内英文不出词、不满足 D1；RTF 0.2375 已逼近 0.3 门禁、首字 P95 875ms 超 800ms。不采用，14M 保持默认"
+      }
+    },
+    {
+      "id": "zipformer-small-ctc-zh-2025-04-01",
+      "sizeMiB": 25,
+      "streaming": true,
+      "hotwords": false,
+      "license": "pending",
+      "redistribution": "blocked-pending",
+      "licenseUrl": "https://k2-fsa.github.io/sherpa/onnx/pretrained_models/online-ctc/zipformer-ctc-models.html",
+      "evidence": "发布页未给出明确权重许可标识（待核）",
+      "note": "同尺寸 A/B 候选；许可回填前不得进包"
+    },
+    {
+      "id": "zipformer-large-ctc-zh",
+      "sizeMiB": 155,
+      "streaming": true,
+      "hotwords": false,
+      "license": "pending",
+      "redistribution": "blocked-pending",
+      "licenseUrl": "https://k2-fsa.github.io/sherpa/onnx/pretrained_models/online-ctc/zipformer-ctc-models.html",
+      "evidence": "上游许可待核",
+      "note": "仅中文，准确率上限更高；与 D1 冲突，优先级低"
+    },
+    {
+      "id": "streaming-paraformer-zh",
+      "sizeMiB": 226,
+      "streaming": true,
+      "hotwords": false,
+      "license": "pending-upstream",
+      "redistribution": "blocked-pending",
+      "licenseUrl": "https://k2-fsa.github.io/sherpa/onnx/pretrained_models/online-paraformer/paraformer-models.html",
+      "evidence": "镜像页标 Apache-2.0，上游 FunASR 权重许可待追溯",
+      "note": "CTC/paraformer 结构需扩展 AsrModelSpec"
+    },
+    {
+      "id": "SenseVoiceSmall",
+      "sizeMiB": 228,
+      "streaming": false,
+      "hotwords": false,
+      "license": "model-license",
+      "redistribution": "local-only",
+      "licenseUrl": "https://huggingface.co/FunAudioLLM/SenseVoiceSmall",
+      "evidence": "HF 模型卡 License 字段为 model-license（已查证，非 Apache-2.0）",
+      "note": "只作离线/二遍候选；未经许可评审不得随包"
+    },
+    {
+      "id": "whisper-large-v3-turbo",
+      "sizeMiB": 1600,
+      "streaming": false,
+      "hotwords": false,
+      "license": "MIT",
+      "redistribution": "offline-only",
+      "licenseUrl": "https://huggingface.co/openai/whisper-large-v3-turbo",
+      "evidence": "HF 模型卡 MIT（已查证）",
+      "note": "体积与延迟不适合实时跟随，只作离线对齐"
+    }
+  ]
+}

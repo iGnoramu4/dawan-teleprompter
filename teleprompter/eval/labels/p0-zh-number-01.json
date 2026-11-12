@@ -1,0 +1,41 @@
+{
+  "id": "p0-zh-number-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "今年第三季度的营收是一千二百五十万元。",
+      "startMs": 600,
+      "endMs": 4668,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "同比增长百分之十八点六，环比增长百分之四。",
+      "startMs": 5418,
+      "endMs": 10215,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "成本控制在三百二十万元左右，占比不到三成。",
+      "startMs": 11015,
+      "endMs": 16038,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "预计明年一月十五号之前完成结算。",
+      "startMs": 16788,
+      "endMs": 20448,
+      "spoken": true
+    },
+    {
+      "index": 4,
+      "text": "具体数字以财务最终口径为准。",
+      "startMs": 21148,
+      "endMs": 24243,
+      "spoken": true
+    }
+  ],
+  "durationMs": 25543
+}

@@ -1,0 +1,34 @@
+{
+  "id": "p0-mix-brand-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "现场用的是 iPhone 和安卓双端同步。",
+      "startMs": 600,
+      "endMs": 3992,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "Wi-Fi 断了也没关系，本地模型可以离线跑。",
+      "startMs": 4742,
+      "endMs": 9180,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "AI 部分我们只做辅助，不做自动改写。",
+      "startMs": 9980,
+      "endMs": 13657,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "数据全部留在本机，不上传云端。",
+      "startMs": 14407,
+      "endMs": 18077,
+      "spoken": true
+    }
+  ],
+  "durationMs": 19377
+}

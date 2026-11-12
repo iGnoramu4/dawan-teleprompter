@@ -1,0 +1,51 @@
+name: Feature request
+description: 提出新功能或体验改进
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先说明使用场景与问题，而不是只给出实现方案。范围请参考 [项目落地计划](../../提词器项目落地计划.md)。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 谁在什么场景下遇到了什么困难？
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议的方案
+      description: 可以描述交互、界面或数据层面的想法。
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 备选方案 / 现有替代
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: 影响范围
+      options:
+        - 阅读页 / 滚动
+        - 语音跟随
+        - 台本导入导出
+        - 局域网遥控
+        - 悬浮提词
+        - 外接显示
+        - 录制 / 复盘
+        - 设置 / 无障碍
+        - 构建 / 发布
+        - 文档
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充信息
+    validations:
+      required: false

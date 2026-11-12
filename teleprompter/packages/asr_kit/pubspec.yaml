@@ -1,0 +1,20 @@
+name: asr_kit
+description: sherpa-onnx 流式识别封装、音频采集、模型安装与 WAV 回放（M0 最小链路）。
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sherpa_onnx: ^2.0.1
+  record: ^7.1.2
+  path_provider: ^2.1.6
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter

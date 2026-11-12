@@ -1,0 +1,29 @@
+{
+  "id": "p0-zh-oral-01",
+  "category": "zh_oral_filler",
+  "voice": "Tingting",
+  "leadingSilenceMs": 700,
+  "trailingSilenceMs": 900,
+  "lines": [
+    {
+      "text": "呃，其实这个功能，那个，我们内部讨论了很久。",
+      "pauseAfterMs": 900
+    },
+    {
+      "text": "就是说，一开始大家觉得没必要，后来又发现确实挺常用的。",
+      "pauseAfterMs": 850
+    },
+    {
+      "text": "嗯，所以这次我们就把它放进了默认设置里面。",
+      "pauseAfterMs": 700
+    },
+    {
+      "text": "那个，具体怎么用，等一下演示的时候大家就能看到。",
+      "pauseAfterMs": 650
+    },
+    {
+      "text": "反正，呃，先用起来再说。",
+      "pauseAfterMs": 400
+    }
+  ]
+}

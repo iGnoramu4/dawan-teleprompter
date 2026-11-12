@@ -1,0 +1,14 @@
+{
+  "id": "p0-mix-term-01",
+  "category": "mix_term",
+  "voice": "Tingting",
+  "leadingSilenceMs": 600,
+  "trailingSilenceMs": 900,
+  "lines": [
+    { "text": "这个功能依赖 Flutter 的插件体系，底层是 sherpa-onnx。", "pauseAfterMs": 800 },
+    { "text": "我们把音频流交给 SDK，由它返回 JSON 格式的结果。", "pauseAfterMs": 850 },
+    { "text": "前端的 prompt 需要单独配置，不能写死在代码里。", "pauseAfterMs": 800 },
+    { "text": "接口这边用的是 REST，鉴权走 token。", "pauseAfterMs": 750 },
+    { "text": "联调的时候记得开 debug 日志。", "pauseAfterMs": 400 }
+  ]
+}

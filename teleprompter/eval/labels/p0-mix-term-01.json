@@ -1,0 +1,41 @@
+{
+  "id": "p0-mix-term-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "这个功能依赖 Flutter 的插件体系，底层是 sherpa-onnx。",
+      "startMs": 600,
+      "endMs": 5881,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "我们把音频流交给 SDK，由它返回 JSON 格式的结果。",
+      "startMs": 6681,
+      "endMs": 12710,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "前端的 prompt 需要单独配置，不能写死在代码里。",
+      "startMs": 13560,
+      "endMs": 18325,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "接口这边用的是 REST，鉴权走 token。",
+      "startMs": 19125,
+      "endMs": 22775,
+      "spoken": true
+    },
+    {
+      "index": 4,
+      "text": "联调的时候记得开 debug 日志。",
+      "startMs": 23525,
+      "endMs": 26210,
+      "spoken": true
+    }
+  ],
+  "durationMs": 27510
+}

@@ -1,0 +1,41 @@
+{
+  "id": "p0-zh-oral-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "呃，其实这个功能，那个，我们内部讨论了很久。",
+      "startMs": 700,
+      "endMs": 5560,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "就是说，一开始大家觉得没必要，后来又发现确实挺常用的。",
+      "startMs": 6460,
+      "endMs": 12664,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "嗯，所以这次我们就把它放进了默认设置里面。",
+      "startMs": 13514,
+      "endMs": 18082,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "那个，具体怎么用，等一下演示的时候大家就能看到。",
+      "startMs": 18782,
+      "endMs": 23988,
+      "spoken": true
+    },
+    {
+      "index": 4,
+      "text": "反正，呃，先用起来再说。",
+      "startMs": 24638,
+      "endMs": 27717,
+      "spoken": true
+    }
+  ],
+  "durationMs": 29017
+}

@@ -1,0 +1,16 @@
+name: design_system
+description: 三端统一 Material 3 主题、令牌与阅读舞台调色板。
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter

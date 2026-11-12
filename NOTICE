@@ -1,0 +1,88 @@
+# NOTICE
+
+Copyright 2026 吃不饱
+
+大皖提词器（Dawan Teleprompter）  
+本项目代码以 Apache-2.0 许可发布（见 `docs/architecture/adr/0003-open-source-license.md`）。随包分发的第三方字体与模型权重按各自许可单独授权，列表如下。
+
+## 1. 字体
+
+### Source Han Sans SC Heavy / Noto Sans SC Black（同源字体）
+
+| 项 | 值 |
+|---|---|
+| 打包文件 | `teleprompter/apps/app/assets/fonts/NotoSansSC-Black.ttf` |
+| Flutter family | `SourceHanSansSC`（weight 900） |
+| 版本 | Google Fonts `NotoSansSC` v41 静态 Black（weight 900） |
+| 下载地址 | `https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@900`（返回的 TTF 直链） |
+| 上游项目 | Adobe Source Han Sans 2.005R <https://github.com/adobe-fonts/source-han-sans>；Noto CJK <https://github.com/notofonts/noto-cjk> |
+| 许可 | SIL Open Font License 1.1（OFL-1.1） |
+| 许可全文 | `teleprompter/apps/app/assets/licenses/NotoSansSC-OFL.txt` |
+| 版权行 | `Copyright 2014-2021 Adobe (http://www.adobe.com/), with Reserved Font Name 'Source'` |
+| SHA256 | `f6a468a9a7270bbf913530a726f6762ba641bbad28183804568be92a4b6736e2` |
+| 文件大小 | 10,521,684 bytes（约 10.03 MiB） |
+| 用途 | 提词器阅读页正文默认字体（超粗体）；编辑页、设置页仍用系统/Material 默认字体 |
+
+OFL 允许嵌入、分发与再分发，要求：保留版权与许可声明、不得单独以字体名义售卖、若修改字体不得使用保留名称 `Source`。本项目未对字体做子集裁剪或字形修改（2026-11-06 决策：包体只记录、不做体积取舍）。
+
+## 2. 文档导入组件
+
+| 组件 | 版本 | 用途 | 许可 | 说明 |
+|---|---|---|---|---|
+| `pdfrx` / `pdfrx_engine` | 2.12.0 / 0.9.1 | PDF 文本层提取（`.pdf` 导入） | MIT | Dart/Flutter 封装 |
+| `pdfium`（经 `pdfium_flutter` / `pdfium_dart` 打包） | 0.4.1 | PDF 渲染/文本引擎 | BSD-3-Clause | 随 Android/桌面构建产物分发 |
+| `archive` | 4.6.0 | 解压 `.docx`（ZIP） | MIT | 纯 Dart |
+| `xml` | 7.1.0 | 解析 `word/document.xml` | MIT | 纯 Dart |
+
+PDF 导入仅提取文本层；扫描版/纯图片 PDF 无文本，会明确提示不支持。
+
+## 3. 模型权重
+
+`sherpa-onnx` 流式 zipformer 中文模型（T0 档，int8，约 25 MB）与中英双语混合模型（T1 档，encoder int8 + decoder/joiner fp32，约 209 MB）随 Android 安装包分发；0.23.0 起语音跟随默认使用双语混合模型，中文 14M 保留为设置项可切回（A+B，2026-11-06 决策）。
+
+| 项 | 值 |
+|---|---|
+| 模型 id | `zipformer-zh-14M-int8`（T0）、`zipformer-bilingual-mixed`（T1，默认） |
+| 随包路径 | `teleprompter/apps/app/assets/models/zipformer-zh-14M-int8/`、`teleprompter/apps/app/assets/models/zipformer-bilingual-mixed/`（权重不入 Git） |
+| 文件 | 14M：`encoder-epoch-99-avg-1.int8.onnx`、`decoder-epoch-99-avg-1.int8.onnx`、`joiner-epoch-99-avg-1.int8.onnx`、`tokens.txt`；双语：`encoder-epoch-99-avg-1.int8.onnx`、`decoder-epoch-99-avg-1.onnx`、`joiner-epoch-99-avg-1.onnx`、`tokens.txt` |
+| 获取与校验 | 构建前按 `teleprompter/tool/models.lock.json` 的 URL/SHA256 获取并校验；见 `MODEL_LICENSE.md` |
+| 用途 | 语音跟随（离线流式识别） |
+| 许可 | 代码框架 Apache-2.0；两档权重均为 Apache-2.0（`MODEL_LICENSE.md §3.3`） |
+| 本地导入 | 规则已定；当前客户端内置 T0/T1 两档，自定义导入入口待实现 |
+
+权重不进入 Git；发布包中的权重由构建准备步骤注入。若上游模型卡不允许再分发，该档位改为仅本地导入或不随包发布。
+
+## 4. 悬浮窗组件
+
+| 组件 | 版本 | 用途 | 许可 | 说明 |
+|---|---|---|---|---|
+| `flutter_overlay_window` | 1.0.2 | Android 系统级悬浮提词（`TYPE_APPLICATION_OVERLAY` + 前台服务） | MIT | 仅封装权限、显示/关闭、位置与尺寸；版权归 X-SLAYER 及贡献者 |
+
+该插件在 Android 端创建独立的 `OverlayService`（`foregroundServiceType=specialUse`）与 FlutterEngine；本应用只在用户主动开启悬浮提词时启动，关闭窗口即停止服务。
+
+`packages/overlay_bridge` 为本项目自研的本地插件（`publish_to: none`，不引入任何第三方代码或依赖），仅用原生 `BasicMessageChannel` 在主引擎与悬浮窗引擎之间转发 JSON，故无需在此登记第三方许可。其 `flutter_overlay_window` 的 MIT 许可全文随构建产物位于 `apps/app/android/app/src/main/assets`（由 Flutter 工具生成）。
+
+## 5. 扫码组件
+
+| 组件 | 版本 | 用途 | 许可 | 说明 |
+|---|---|---|---|---|
+| `mobile_scanner` | 7.5.0 | 遥控端扫描配对二维码 | BSD-3-Clause | 版权归 Julian Steenbakker 及贡献者 |
+| `com.google.mlkit:barcode-scanning`（经 `mobile_scanner` 打包） | Android MLKit | 本机条码解码（bundled，离线可用） | Apache-2.0 | 相机帧仅在本机处理，不上传 |
+
+扫码为可选功能；相机权限被拒绝或平台不支持（Windows）时，遥控端保留粘贴配对串的手动后备。`mobile_scanner` 的 BSD-3-Clause 许可全文随构建产物由 Flutter 工具生成至 `apps/app/android/app/src/main/assets`。
+
+## 6. 录制与复盘组件
+
+| 组件 | 版本 | 用途 | 许可 | 说明 |
+|---|---|---|---|---|
+| `record` | 7.1.2 | 麦克风采集（语音跟随与录制共用 PCM 流） | BSD-3-Clause | 版权归 openapi4j authors 及贡献者 |
+| `just_audio` | 0.10.6 | 复盘音频播放（播放/暂停/拖动/倍速） | MIT | 版权归 Ryan Heise 及贡献者 |
+| `just_audio_platform_interface`（经 `just_audio` 打包） | 4.6.0 | 播放器平台接口 | MIT | 传递依赖 |
+| `audio_session`（经 `just_audio` 打包） | 0.2.4 | 音频会话与焦点 | MIT | 传递依赖 |
+| `rxdart`（经 `just_audio` 打包） | 0.28.0 | 响应式流工具 | Apache-2.0 | 传递依赖 |
+
+录制音频以 16 kHz / 单声道 / 16 bit PCM WAV 写入应用私有目录 `recordings/`，时间轴（10 Hz）与音频路径记录在本地数据库；导出由用户主动通过系统"另存为"选择目标位置。Windows 无 `just_audio` 官方实现，复盘播放会捕获异常并提示，录制与导出不受影响。
+
+`core_recording` 为本项目自研的纯 Dart 包（`packages/core_recording`，无第三方代码），负责时间轴模型、线性插值与 SRT 导出，故无需在此登记第三方许可。
+
+

@@ -1,0 +1,34 @@
+{
+  "id": "p0-zh-skip-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "我们先讲第一点，也就是产品的定位。",
+      "startMs": 600,
+      "endMs": 4226,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "这一段是备用内容，正常情况下我不会读它。",
+      "startMs": 4926,
+      "endMs": 4926,
+      "spoken": false
+    },
+    {
+      "index": 2,
+      "text": "直接跳到第二点，现场演示的部分。",
+      "startMs": 4926,
+      "endMs": 8581,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "演示结束以后我们再回到排期。",
+      "startMs": 9281,
+      "endMs": 12454,
+      "spoken": true
+    }
+  ],
+  "durationMs": 13754
+}

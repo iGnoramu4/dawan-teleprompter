@@ -1,0 +1,34 @@
+{
+  "id": "p0-zh-pause-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "下面这段话我会故意停顿得久一点。",
+      "startMs": 600,
+      "endMs": 4108,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "第一句话讲完之后，我会停下来想一想。",
+      "startMs": 6108,
+      "endMs": 10222,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "有时候现场需要看提词器确认下一句。",
+      "startMs": 12622,
+      "endMs": 16642,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "所以停顿两秒左右是很常见的情况。",
+      "startMs": 18442,
+      "endMs": 22066,
+      "spoken": true
+    }
+  ],
+  "durationMs": 23366
+}

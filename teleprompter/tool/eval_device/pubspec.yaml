@@ -1,0 +1,27 @@
+name: eval_device
+description: 提词器 ASR 评测 harness（仅工具，不参与产品发布）。
+publish_to: none
+version: 0.1.0
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  asr_eval:
+    path: ../eval
+  asr_kit:
+    path: ../../packages/asr_kit
+  core_alignment:
+    path: ../../packages/core_alignment
+  sherpa_onnx: 2.0.1
+  path: ^1.9.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

@@ -1,0 +1,66 @@
+# 本仓库根目录 = 项目根（docs/ + teleprompter/）。
+# 代码级构建产物另有 teleprompter/.gitignore 兜底。
+
+# macOS / 编辑器
+.DS_Store
+.AppleDouble
+.LSOverride
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# 发布物与本地大文件（不入库）
+/dist/
+/models-eval/
+/.screenshots/
+*.apk
+*.aab
+*.ipa
+
+# 已否决的图标方案探索稿（生成稿，不进入公开仓库）
+teleprompter/assets/branding/proposals/
+
+# 构建与依赖缓存
+**/build/
+**/.dart_tool/
+**/.gradle/
+**/.kotlin/
+**/coverage/
+**/Pods/
+**/.symlinks/
+**/Flutter/ephemeral/
+**/Flutter/Generated.xcconfig
+**/Flutter/flutter_export_environment.sh
+**/flutter/ephemeral/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+
+# 本地配置与日志
+**/local.properties
+**/key.properties
+**/*.log
+**/logs/
+**/.env
+**/.env.*
+
+# 签名与凭据（绝不入库）
+**/*.jks
+**/*.keystore
+**/*.p12
+**/*.pfx
+**/*.pem
+**/*.mobileprovision
+**/*.cer
+**/*.p8
+
+# 模型权重：仅保留清单与许可文本
+teleprompter/apps/app/assets/models/**/*.onnx
+teleprompter/apps/app/assets/models/**/tokens.txt
+teleprompter/tool/eval_device/build/
+teleprompter/eval/audio/
+
+# 评测/临时输出
+teleprompter/tool/out/
+teleprompter/tool/**/build/
+/tmp/

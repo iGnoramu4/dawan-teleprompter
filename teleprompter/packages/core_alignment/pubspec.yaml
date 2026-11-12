@@ -1,0 +1,15 @@
+name: core_alignment
+description: 纯 Dart 归一化、拼音模糊匹配、窗口单调 DP 对齐与回跳抑制。
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  lpinyin: ^2.0.3
+
+dev_dependencies:
+  coverage: ^1.11.0
+  lints: ^5.1.1
+  test: ^1.25.15

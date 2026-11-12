@@ -1,0 +1,65 @@
+name: teleprompter
+description: "大皖提词器：台本滚动 + 离线语音跟随。"
+publish_to: 'none'
+version: 0.28.3+2037
+
+environment:
+  sdk: ^3.6.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^2.6.1
+  file_picker: ^13.3.2
+  path: ^1.9.0
+  path_provider: ^2.1.6
+  fast_gbk: ^1.0.0
+  core_models:
+    path: ../../packages/core_models
+  core_alignment:
+    path: ../../packages/core_alignment
+  core_reader_layout:
+    path: ../../packages/core_reader_layout
+  data_store:
+    path: ../../packages/data_store
+  design_system:
+    path: ../../packages/design_system
+  asr_kit:
+    path: ../../packages/asr_kit
+  wakelock_plus: ^1.8.2
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.3
+  archive: ^4.0.9
+  xml: ^7.1.0
+  pdfrx: ^2.12.0
+  shelf: ^1.4.3
+  qr_flutter: ^4.1.0
+  flutter_overlay_window: ^1.0.2
+  overlay_bridge:
+    path: ../../packages/overlay_bridge
+  mobile_scanner: ^7.5.0
+  just_audio: ^0.10.6
+  core_recording:
+    path: ../../packages/core_recording
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  generate: true
+  assets:
+    - assets/scripts/
+    - assets/models/zipformer-zh-14M-int8/
+    - assets/models/zipformer-bilingual-mixed/
+    - assets/test_wavs/
+    - assets/licenses/
+  fonts:
+    - family: SourceHanSansSC
+      fonts:
+        - asset: assets/fonts/NotoSansSC-Black.ttf
+          weight: 900

@@ -1,0 +1,13 @@
+{
+  "id": "p0-zh-narr-01",
+  "category": "zh_narrative",
+  "voice": "Tingting",
+  "leadingSilenceMs": 600,
+  "trailingSilenceMs": 900,
+  "lines": [
+    { "text": "各位好，今天这场分享我们主要讲三个部分。", "pauseAfterMs": 700 },
+    { "text": "第一是产品的定位，第二是现场演示，第三是后续的排期安排。", "pauseAfterMs": 650 },
+    { "text": "整个流程大概需要四十分钟，中间会留出提问时间。", "pauseAfterMs": 600 },
+    { "text": "如果没有其他问题，我们现在就开始。", "pauseAfterMs": 400 }
+  ]
+}

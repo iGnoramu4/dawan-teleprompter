@@ -1,0 +1,14 @@
+{
+  "id": "p0-zh-number-01",
+  "category": "zh_number",
+  "voice": "Tingting",
+  "leadingSilenceMs": 600,
+  "trailingSilenceMs": 900,
+  "lines": [
+    { "text": "今年第三季度的营收是一千二百五十万元。", "pauseAfterMs": 750 },
+    { "text": "同比增长百分之十八点六，环比增长百分之四。", "pauseAfterMs": 800 },
+    { "text": "成本控制在三百二十万元左右，占比不到三成。", "pauseAfterMs": 750 },
+    { "text": "预计明年一月十五号之前完成结算。", "pauseAfterMs": 700 },
+    { "text": "具体数字以财务最终口径为准。", "pauseAfterMs": 400 }
+  ]
+}

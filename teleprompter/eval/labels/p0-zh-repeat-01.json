@@ -1,0 +1,41 @@
+{
+  "id": "p0-zh-repeat-01",
+  "lines": [
+    {
+      "index": 0,
+      "text": "我们的目标是，目标是让每个人都能快速上手。",
+      "startMs": 600,
+      "endMs": 5143,
+      "spoken": true
+    },
+    {
+      "index": 1,
+      "text": "这套方案，这套方案在上周已经验证过了。",
+      "startMs": 5943,
+      "endMs": 10272,
+      "spoken": true
+    },
+    {
+      "index": 2,
+      "text": "不对，我重新说，是在上个月完成的验证。",
+      "startMs": 11022,
+      "endMs": 15526,
+      "spoken": true
+    },
+    {
+      "index": 3,
+      "text": "验证的结果是，稳定性提升了百分之二十。",
+      "startMs": 16426,
+      "endMs": 20748,
+      "spoken": true
+    },
+    {
+      "index": 4,
+      "text": "所以接下来我们按原计划推进。",
+      "startMs": 21448,
+      "endMs": 24550,
+      "spoken": true
+    }
+  ],
+  "durationMs": 25850
+}

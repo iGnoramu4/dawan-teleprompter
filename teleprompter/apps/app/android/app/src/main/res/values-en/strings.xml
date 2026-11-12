@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Dawan Teleprompter</string>
+    <string name="voice_service_title">Dawan Teleprompter voice follow</string>
+    <string name="voice_service_text">Following your speech with the microphone</string>
+    <string name="voice_service_channel">Voice follow</string>
+</resources>

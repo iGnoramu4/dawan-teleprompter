@@ -1,0 +1,13 @@
+{
+  "id": "p0-zh-fast-01",
+  "category": "zh_fast",
+  "voice": "Tingting",
+  "leadingSilenceMs": 500,
+  "trailingSilenceMs": 900,
+  "lines": [
+    { "text": "接下来我快速过一遍这三个模块的具体实现和它们之间的调用关系。", "pauseAfterMs": 450 },
+    { "text": "第一部分负责采集第二部分负责识别第三部分负责把结果映射到稿件位置。", "pauseAfterMs": 450 },
+    { "text": "三部分之间通过一个轻量的消息通道连接互不阻塞。", "pauseAfterMs": 450 },
+    { "text": "如果中间任何一环掉队整体就会明显滞后这一点要特别注意。", "pauseAfterMs": 400 }
+  ]
+}
