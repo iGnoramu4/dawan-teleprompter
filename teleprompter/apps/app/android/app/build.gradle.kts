@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
@@ -7,6 +9,18 @@ plugins {
 // 应用包名集中在此处：修改 android/gradle.properties 的 appApplicationId 即可。
 // 注意：Kotlin 源码包路径（com/dawan/teleprompter）与 MethodChannel 名称不随此值自动变化。
 val appId = providers.gradleProperty("appApplicationId").getOrElse("com.dawan.teleprompter")
+
+// 正式签名配置存放在仓库之外，避免密钥与密码进入 Git。
+// 可用环境变量 DAWAN_KEYSTORE_PROPERTIES 指向其他位置的 key.properties。
+val keystorePropertiesFile = file(
+    System.getenv("DAWAN_KEYSTORE_PROPERTIES")
+        ?: "${System.getProperty("user.home")}/.dawan-teleprompter-secrets/keystore.properties",
+)
+val keystoreProperties = Properties().apply {
+    if (keystorePropertiesFile.exists()) {
+        keystorePropertiesFile.inputStream().use { load(it) }
+    }
+}
 
 android {
     namespace = appId
@@ -33,11 +47,29 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        if (keystorePropertiesFile.exists()) {
+            create("release") {
+                storeFile = file(keystoreProperties.getProperty("storeFile"))
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            }
+        }
+    }
+
     buildTypes {
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.getByName("debug")
+            // 有仓库外 key.properties 时使用正式签名；缺失时退回 debug，
+            // 仅用于本地 `flutter run --release`，不可作为发布包。
+            signingConfig = if (keystorePropertiesFile.exists()) {
+                signingConfigs.getByName("release")
+            } else {
+                logger.warn(
+                    "未找到 ${keystorePropertiesFile.absolutePath}，release 构建将使用 debug 签名。",
+                )
+                signingConfigs.getByName("debug")
+            }
         }
     }
 }
