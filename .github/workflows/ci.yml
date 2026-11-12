@@ -36,6 +36,10 @@ jobs:
           for p in packages/*; do
             (cd "$p" && flutter pub get) || exit 1
           done
+          # tool/ 下的评测工具也有独立 pubspec；缺包配置会让 dart format
+          # 按最新语言版本排版，导致 format 步骤误报。
+          (cd tool/eval && flutter pub get)
+          (cd tool/eval_device && flutter pub get)
 
       - name: Format
         run: dart format --output=none --set-exit-if-changed .
